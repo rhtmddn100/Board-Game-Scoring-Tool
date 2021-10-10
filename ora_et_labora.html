@@ -24,6 +24,11 @@
         border: none;
         text-align: center;
       }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }     
     </style>
   </head>
   <body>
@@ -38,10 +43,10 @@
       </tr>
       <tr>
         <th style="padding: 10px;">판자촌</td>
-        <td><input onblur="findTotal('p1', 'total1')" type="number" name="p1" size="3"></td>
-        <td><input onblur="findTotal('p2', 'total2')" type="number" name="p2" size="3"></td>
-        <td><input onblur="findTotal('p3', 'total3')" type="number" name="p3" size="3"></td>
-        <td><input onblur="findTotal('p4', 'total4')" type="number" name="p4" size="3"></td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
       </tr>
       <tr>
         <th style="padding: 10px;">농촌</td>
