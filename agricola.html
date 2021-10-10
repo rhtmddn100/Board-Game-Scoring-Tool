@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Agricola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      h1 {
+        font-family: "helvetica";
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+      }
+      table, th, td {
+        font-family: "helvetica";
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        border: none;
+        text-align: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }     
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: left;">Agricola</h1>
+    <table>
+      <tr>
+        <th style="padding: 10px" width = "120">이름</th>
+        <th width = "50";><input type="text" name=""></th>
+        <th width = "50";><input type="text" name=""></th>
+        <th width = "50";><input type="text" name=""></th>
+        <th width = "50";><input type="text" name=""></th>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">밭 타일</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">우리</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">곡식</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">채소</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">양</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">맷돼지</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">소</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">사용하지 않은 빈칸</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">울타리 친 외양간</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">방</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">가족 구성원</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;">추가 점수</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="number" pattern="[0-9]*" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="number" pattern="[0-9]*" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;"><b>Total</b></td>
+        <td><input type="text" name="" id="total1" size="3" value="0"></td>
+        <td><input type="text" name="" id="total2" size="3" value="0"></td>
+        <td><input type="text" name="" id="total3" size="3" value="0"></td>
+        <td><input type="text" name="" id="total4" size="3" value="0"></td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      function findTotal(player, total){
+        var arr = document.getElementsByName(player);
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+        }
+        document.getElementById(total).value = tot;
+      }
+    </script>
+  </body>
+</html>
