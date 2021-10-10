@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Board Game Scoring</title>
+    <style type="text/css">
+      h1 {
+        font-family: "helvetica";
+      }
+      table, th, td {
+        font-family: "helvetica";
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        border: none;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ora et Labora</h1>
+    <table>
+      <tr>
+        <th width = "120"></th>
+        <th width = "50"; style="padding: 10px; background-color: lightblue;">Blue</th>
+        <th width = "50"; style="padding: 10px; background-color: lightgreen;">Green</th>
+        <th width = "50"; style="padding: 10px; background-color: #F29999;">Red</th>
+        <th width = "50"; style="padding: 10px; background-color: #EBC975;">Tan</th>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">판자촌</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">농촌</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">장터</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">어촌</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">예술가 거주지</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">작은 마을</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">마을</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">언덕배기 마을</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">건물</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">상품</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="text" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="text" name="p2" size="3"></td>
+        <td><input onblur="findTotal('p3', 'total3')" type="text" name="p3" size="3"></td>
+        <td><input onblur="findTotal('p4', 'total4')" type="text" name="p4" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;"><b>Total</b></td>
+        <td><input type="text" name="" id="total1" size="3" value="0"></td>
+        <td><input type="text" name="" id="total2" size="3" value="0"></td>
+        <td><input type="text" name="" id="total3" size="3" value="0"></td>
+        <td><input type="text" name="" id="total4" size="3" value="0"></td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      function findTotal(player, total){
+        var arr = document.getElementsByName(player);
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+        }
+        document.getElementById(total).value = tot;
+      }
+    </script>
+  </body>
+</html>
