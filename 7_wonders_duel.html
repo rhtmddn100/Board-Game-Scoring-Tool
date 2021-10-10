@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>7 Wonders Duel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      h1 {
+        font-family: "helvetica";
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+      }
+      table, th, td {
+        font-family: "helvetica";
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        border: none;
+        text-align: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }     
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: left;">7 Wonders Duel</h1>
+    <table>
+      <tr>
+        <th width = "120"></th>
+        <th width = "50"; style="padding: 10px;">Player 1</th>
+        <th width = "50"; style="padding: 10px;">Player 2</th>
+      </tr>
+      <tr>
+        <th style="padding: 10px; background-color: lightblue;">문화 카드</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px; background-color: lightgreen;">과학 카드</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px; background-color: lightyellow;">상업 카드</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px; background-color: mediumpurple;">길드 카드</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">불가사의</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">진보 토큰</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px;">돈</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr>
+        <th style="padding: 10px; background-color: #F29999;">군사 트랙</td>
+        <td><input onblur="findTotal('p1', 'total1')" type="number" pattern="[0-9]*" name="p1" size="3"></td>
+        <td><input onblur="findTotal('p2', 'total2')" type="number" pattern="[0-9]*" name="p2" size="3"></td>
+      </tr>
+      <tr style="border-top: 3px solid black">
+        <th style="padding: 10px;"><b>Total</b></td>
+        <td><input type="text" name="" id="total1" size="3" value="0"></td>
+        <td><input type="text" name="" id="total2" size="3" value="0"></td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      function findTotal(player, total){
+        var arr = document.getElementsByName(player);
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+        }
+        document.getElementById(total).value = tot;
+      }
+    </script>
+  </body>
+</html>
